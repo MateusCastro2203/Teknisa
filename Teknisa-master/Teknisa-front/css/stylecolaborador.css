@@ -1,0 +1,61 @@
+/*-- signin-card animation ---------------------------------------- */
+.signin-card {
+  -webkit-animation: cardEnter 0.75s ease-in-out 0.5s;
+  animation: cardEnter 0.75s ease-in-out 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  opacity: 0;
+}
+
+/* -- login paper styles ------------------------------ */
+.signin-card {
+  max-width: 350px;
+  border-radius: 2px;
+  margin: 20px auto;
+  padding: 20px;   
+  background-color: black;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .19),
+  0 6px 6px rgba(0, 0, 0, .23); 
+}
+
+
+    .logo-image, h1, p {
+    text-align: center;
+  }    
+
+
+/* -- font styles ------------------------------------- */
+.display1 {
+  font-size: 28px;
+  font-weight: 100;
+  line-height: 1.2;
+  color: #757575;
+  text-transform: inherit;
+  letter-spacing: inherit;
+}
+
+.subhead {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.1;
+  color: #212121;
+  text-transform: inherit;
+  letter-spacing: inherit;
+}
+
+/* FORMULARIO -------------------- */
+
+
+.form{
+    position: relative;
+    left: 45%;
+    top: 30px;
+}
+
+.formulario {
+    width: 50%;
+    display: none; /* <-- estado inicial oculto do formulario */
+    padding: 15px 25px 0px;   
+}
+
+

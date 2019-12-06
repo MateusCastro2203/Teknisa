@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Agendamento de Salas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="index.html">
+            <img src="https://d3n3c8rpwp6bs7.cloudfront.net/wp-content/uploads/2018/06/Logo-Teknisa-SM-1x.png"
+                srcset="https://d3n3c8rpwp6bs7.cloudfront.net/wp-content/uploads/2018/06/Logo-Teknisa-SM-1x.png 1x, https://d3n3c8rpwp6bs7.cloudfront.net/wp-content/uploads/2018/06/Logo-Teknisa-SM-2x.png 2x"
+                width="120" height="23" style="max-height:23px;height:auto;" alt="Teknisa Logotipo"
+                data-retina_logo_url="https://d3n3c8rpwp6bs7.cloudfront.net/wp-content/uploads/2018/06/Logo-Teknisa-SM-2x.png">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+    <h1 class="text-center">Adicionar nova sala</h1>
+    <div class="container">
+        <form action="#">
+            <div class="form-group">
+                <label for="nome">Nome da Sala</label>
+                <input type="email" class="form-control" placeholder="Nome da Sala" id="nome">
+            </div>
+            <div class="form-group">
+                <label for="cadeiras">Quantidade de Cadeiras</label>
+                <input type="number" class="form-control" placeholder="Numer de cadeiras" id="cadeiras">
+            </div>
+            <div class="card" style="width: 18rem; position: center;">
+                <div class="form-group">
+                    <label for="cadeiras">Computador</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="possuipc" value="sim">
+                        <label class="form-check-label" for="possuipc">Sim</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="naopossuipc" value="nao">
+                        <label class="form-check-label" for="naopossuipc">Não</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cadeiras">Projetor</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="possuiproj" value="sim">
+                        <label class="form-check-label" for="possuiproj">Sim</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="naopossuiproj" value="nao">
+                        <label class="form-check-label" for="naopossuiproj">Não</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cadeiras">Videoconferênci</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="possuivideo" value="sim">
+                        <label class="form-check-label" for="possuivideo">Sim</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="naopossuivideo" value="nao">
+                        <label class="form-check-label" for="naopossuivideo">Não</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                    <button type="button" class="btn btn-success btn-block">Enviar</button>
+                </div>
+     </form>
+    </div>
+</body>
+
+</html>
