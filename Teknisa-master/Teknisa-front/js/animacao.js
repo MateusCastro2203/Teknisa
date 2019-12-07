@@ -24,3 +24,4 @@ function FormularioClick(){
     console.log('CLICK');
     $('.formulario').slideToggle();
 }
+

@@ -6,7 +6,7 @@ class AgendamentoSalaControl{
         $agendamentoSala = new AgendamentoSala();
         return $agendamentoSala->insert($obj);
     }
-    function find($id=null){
+    function find($obj,$id=null){
         $agendamentoSala = new AgendamentoSala();
         return $agendamentoSala->find(1);
     }
