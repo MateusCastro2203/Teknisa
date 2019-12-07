@@ -41,7 +41,7 @@ switch ($request) {
     case '/'.PASTAPROJETO.'sala':
         require __DIR__.'/api/'.$answer.'_sala.php';
 		break;
-	case '/'.PASTAPROJETO.'/agendamento':
+	case '/'.PASTAPROJETO.'agendamento':
 		require __DIR__.'/api/'.$answer.'_agendamento.php';
 		break;
     
