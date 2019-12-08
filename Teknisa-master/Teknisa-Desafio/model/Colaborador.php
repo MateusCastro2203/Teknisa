@@ -85,8 +85,8 @@ class Colaborador extends Conexao {
         return $consulta->execute();
     }
     //FUNÇÃO PARA BUSCAR O USUARIO
-    public function find($id = null){
-        $sql =  "SELECT * FROM tb_colaborador WHERE ID = :id";
+    public function find($email=null){
+        $sql =  "SELECT * FROM tb_colaborador WHERE EMAILCOLAB = :email";
         $consulta = Conexao::prepare($sql);
         $consulta->bindValue('id',$id);
         $consulta->execute();
