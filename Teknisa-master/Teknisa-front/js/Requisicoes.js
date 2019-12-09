@@ -27,7 +27,7 @@ function postFormUsuario(){
     data['nome'] = form.nome.value;
     data['email'] = form.email.value;
     data['telefone'] = form.telefone.value;
-    fetch('http://localhost/Teknisa/Teknisa-master/Teknisa-Desafio/colaborador' ,{
+    fetch('http://localhost/Teknisa-master/Teknisa-master/Teknisa-front/adicionarUser.html' ,{
         method: 'POST',
         body: JSON.stringify(data)
     })
