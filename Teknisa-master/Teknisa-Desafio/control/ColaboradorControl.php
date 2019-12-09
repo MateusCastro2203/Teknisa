@@ -19,7 +19,7 @@ class ColaboradorControl{
 		return $colaborador->delete($obj,$id);
 	}
 
-	function find($email=null){
+	function find(){
 		$colaborador = new Colaborador();
 		return $colaborador->find();
 	}

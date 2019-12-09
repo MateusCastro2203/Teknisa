@@ -67,7 +67,7 @@ div.caixa{
 
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto;
   margin: 10px;
 }
 .grid-item {

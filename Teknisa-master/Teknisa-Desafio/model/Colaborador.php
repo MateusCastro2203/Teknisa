@@ -4,6 +4,7 @@ include __DIR__.'/Conexao.php';
 class Colaborador extends Conexao {
 
     //DECLARAÇÃO DE VARIAVEIS
+    private $idcolab;
     private $nome;
     private $email;
     private $telefone;
@@ -12,6 +13,15 @@ class Colaborador extends Conexao {
 
 
     //SETANDO AS VARIAVEIS JÁ DECLARADAS
+    public function getId(){
+        return $this->idcolab;
+    }
+
+    public function setId($idcolab){
+        $this->idcolab = $idcolab;
+        return $this;
+    }
+
     public function getNome(){
         return $this->nome;
     }
@@ -44,25 +54,12 @@ class Colaborador extends Conexao {
     
     //FUNÇÃO PARA INSERIR NA TABELA DO ABANCO DE DADOS OS COLABORADORES
     public function insert($obj){
-        //VALIDAÇÃO PARA VER SE JA EXITE UM USUARIO COM ESSE NOME OU EMAIL
-        $verifica = "SELECT INTO tb_colaborador(NOMECOLAB, EMAILCOLAB) WHERE NOMECOLAB = :nome OR EMAILCOLAB = :email";
-        $consulta = Conexao::prepare($verifica);
-        $consulta->bindValue('nome', $obj->nome);
-        $consulta->bindValue('email', $obj->email);
-        $consulta->execute();
-        //VERIFICANDO SE FOI ENCONTRADO ALGUM USUARIO
-        $count = $consulta->rowCount();
-        if($count == 0){
             $sql = "INSERT INTO tb_colaborador(NOMECOLAB, EMAILCOLAB, TELEFONECOLAB) VALUES (:nome , :email, :telefone)";
             $consulta = Conexao::prepare($sql);
             $consulta->bindValue('nome', $obj->nome);
             $consulta->bindValue('email', $obj->email);
             $consulta->bindValue('telefone', $obj->$telefone);
             return $consulta->execute();
-        }else{
-            $retorna = "COLABORADOR EXITENTE";
-            return $retorna;
-        }
         
     }
 
@@ -85,18 +82,12 @@ class Colaborador extends Conexao {
         return $consulta->execute();
     }
     //FUNÇÃO PARA BUSCAR O USUARIO
-    public function find($email=null){
-        $sql =  "SELECT * FROM tb_colaborador WHERE EMAILCOLAB = :email";
+    public function find(){
+        $sql =  "SELECT *FROM tb_colaborador WHERE 1";
         $consulta = Conexao::prepare($sql);
-        $consulta->bindValue('id',$id);
         $consulta->execute();
         $count = $consulta->rowCount();
-        if($count == 0){
-            echo "Não foi encontrado usuario com esse email";
-        }else{
-            $consulta->execute();
-            return $consulta->fetch();
-        }
+        return $consulta->fetchAll();
     }
 
 

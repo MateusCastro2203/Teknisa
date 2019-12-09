@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/Requisicoes.js"></script>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="home.html">
+            <img src="https://d3n3c8rpwp6bs7.cloudfront.net/wp-content/uploads/2018/06/Logo-Teknisa-SM-1x.png"
+                srcset="https://d3n3c8rpwp6bs7.cloudfront.net/wp-content/uploads/2018/06/Logo-Teknisa-SM-1x.png 1x, https://d3n3c8rpwp6bs7.cloudfront.net/wp-content/uploads/2018/06/Logo-Teknisa-SM-2x.png 2x"
+                width="120" height="23" style="max-height:23px;height:auto;" alt="Teknisa Logotipo"
+                data-retina_logo_url="https://d3n3c8rpwp6bs7.cloudfront.net/wp-content/uploads/2018/06/Logo-Teknisa-SM-2x.png">
+        </a>
+    </nav>
+
+    <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th id=“idColab”>ID</th>       
+                <th id=“nome”>Nome </th>
+                <th id=“email”>Email</th>
+                <th id=“telefone”>Telefone</th>
+                <th > </th>
+              </tr>
+            </thead>
+            <tbody id="tableUser">
+            </tbody>
+        </table>
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Alterar Ususario</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="alterarAluno" action="javascript:updateFormUser()">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="nome">Nome</label>
+                                    <input type="text" class="form-control" aria-describedby="nomeHelp" id="nome">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="text" class="form-control" id="email" maxlength="11">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="telefone">Telefone</label>
+                                    <input type="number" class="form-control" id="telefone" maxlength="2">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-12  d-flex justify-content-center">
+                                    <div class="form-group">
+                                    </div>
+                                </div>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<link rel="stylesheet" href="../Teknisa-front/css/style.css">
+
+</html>

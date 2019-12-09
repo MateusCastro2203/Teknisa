@@ -55,14 +55,7 @@ class SalaReuniao extends Conexao{
 
     //FUNÇÃO PARA INSERIR NA TABELA DO ABANCO DE DADOS AS SALAS
     public function insert ($obj){
-        //VALIDAÇÃO PARA VER SE JA EXITE UMA SALA COM ESSE NOME
-        $verifica = "SELECT NOMESALA FROM td_salareuniao WHERE NOMESALA = :nome";
-        $consulta = Conexao::prepare($verifica);
-        $consulta->bindValue('nome', $obj->nome);
-        $consulta->execute();
-        //VERIFICANDO SE FOI ENCONTRADO ALGUMA SALA
-        $count = $consulta->rowCount();
-        if($count == 0){
+
             $sql = "INSERT INTO td_salareuniao(NOMESALA, QUANTCAD, COMPUTADOR, PROJETOR, VIDEOCHAMADA) VALUES (:nome,:quantCad,:contComp,:contProj,:contVideoChamada)";
             $consulta = Conexao::prepare($sql);
             $consulta->bindValue('nome',$obj->nome);
@@ -71,10 +64,7 @@ class SalaReuniao extends Conexao{
             $consulta->bindValue('contProj',$obj->contProj);
             $consulta->bindValue('contVideoChamada',$obj->contVideoChamada);
             return $consulta->execute();
-        }else{
-            $retorna = "SALA JÁ EXISTENTE";
-            return $retorna;
-        }
+        
     }
 
     //FUNÇÃO PARA FAZER ALTERAÇÃO NA SALA
