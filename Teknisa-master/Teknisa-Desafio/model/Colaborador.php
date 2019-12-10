@@ -58,7 +58,7 @@ class Colaborador extends Conexao {
             $consulta = Conexao::prepare($sql);
             $consulta->bindValue('nome', $obj->nome);
             $consulta->bindValue('email', $obj->email);
-            $consulta->bindValue('telefone', $obj->$telefone);
+            $consulta->bindValue('telefone', $obj->telefone);
             return $consulta->execute();
         
     }
@@ -90,6 +90,9 @@ class Colaborador extends Conexao {
         return $consulta->fetchAll();
     }
 
+    public function findone(){
+        
+    }
 
 }
 ?>

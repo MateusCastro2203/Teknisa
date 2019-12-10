@@ -6,7 +6,9 @@ $data = file_get_contents('php://input');
 $obj =  json_decode($data);
 if(!empty($data)){	
 	try {
-        $agendamentoSala = new AgendamentoSalaControl();
+        $agendamentoSala = new AgendamentoSalaControl(
+			$obj
+		);
  		$resposta = $agendamentoSala->insert($obj);
  		http_response_code(200);
  		$obj->id = $resposta;

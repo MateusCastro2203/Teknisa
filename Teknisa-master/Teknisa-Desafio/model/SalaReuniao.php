@@ -55,15 +55,16 @@ class SalaReuniao extends Conexao{
 
     //FUNÇÃO PARA INSERIR NA TABELA DO ABANCO DE DADOS AS SALAS
     public function insert ($obj){
-
-            $sql = "INSERT INTO td_salareuniao(NOMESALA, QUANTCAD, COMPUTADOR, PROJETOR, VIDEOCHAMADA) VALUES (:nome,:quantCad,:contComp,:contProj,:contVideoChamada)";
+            $sql = "INSERT INTO td_salareuniao (NOMESALA, QUANTCAD, COMPUTADOR, PROJETOR, VIDEOCHAMADA) 
+                    VALUES (:nome,:quantCad,:contComp,:contProj,:contVideoChamada)";
             $consulta = Conexao::prepare($sql);
             $consulta->bindValue('nome',$obj->nome);
             $consulta->bindValue('quantCad',$obj->quantCad);
-            $consulta->bindValue('contcomp',$obj->contComp);
+            $consulta->bindValue('contComp',$obj->contComp);
             $consulta->bindValue('contProj',$obj->contProj);
             $consulta->bindValue('contVideoChamada',$obj->contVideoChamada);
             return $consulta->execute();
+
         
     }
 
@@ -85,7 +86,16 @@ class SalaReuniao extends Conexao{
 		$consulta = Conexao::prepare($sql);
 		$consulta->bindValue('id',$id);
 		return $consulta->execute();
-	}
+    }
+    
+     //FUNÇÃO PARA BUSCAR A SALA
+     public function find(){
+        $sql =  "SELECT * FROM td_salareuniao WHERE 1";
+        $consulta = Conexao::prepare($sql);
+        $consulta->execute();
+        $count = $consulta->rowCount();
+        return $consulta->fetchAll();
+    }
 
 
 

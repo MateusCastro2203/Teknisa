@@ -12,7 +12,7 @@ if(!empty($data)){
  		echo json_encode($obj);
  	}
  	catch (PDOException $e) {
- 		http_response_code(400);
+		http_response_code(400);
 		echo json_encode(array("mensagem" => "Parâmetros Inválidos"));
 	}
 }

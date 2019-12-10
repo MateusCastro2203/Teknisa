@@ -32,8 +32,8 @@ class AgendamentoSala extends SalaReuniao{
       return $this;
   }
 
-  public function insert($obj ,$idsala=null,$idcolaborador=null){
-      $sql = "INSERT INTO tb_agendamento(IDSALA,IDCOLABORADOR, HORAFIM, HORAINI, DATA) VALUES (:idsala,:idcolaborador, :hora_Fim , :hora_Ini, :data_reserva)";
+  public function insert($obj ,$idsala=null){
+      $sql = "INSERT INTO tb_agendamento(IDSALA, HORAFIM, HORAINI, DATA) VALUES (:idsala, :hora_Fim , :hora_Ini, :data_reserva)";
       $consulta = Conexao::prepare($sql);
       $consulta->bindValue('idsala',  $idsala);
       $consulta->bindValue('idcolaborador',  $idcolaborador);
@@ -43,7 +43,7 @@ class AgendamentoSala extends SalaReuniao{
       return $consulta->execute();
   }
 
-  public function find($data_Reserva=null,$hora_Ini=null,$hora_Fim=null,$salaNome=null,$quantCad=null,$contComp=null,$contProj=null,$contVideoChamada=null){
+  public function find($obj){
       $sql = "SELECT NOME FROM td_salareuniao WHERE ID NOT IN (SELECT IDSALA FROM tb_agendamento WHERE DATA = :data_Reserva 
       AND (hora_Ini BETWEEN :hora_Ini AND :hora_Fim OR hora_Fim BETWEEN :hora_Ini and :hora_Fim) 
       AND NOMESALA = :salaNome
@@ -52,7 +52,7 @@ class AgendamentoSala extends SalaReuniao{
       AND PROJETOR = :contProj 
       AND VIDEOCHAMADA = :contVideoChamada)";
       $consulta = Conexao::prepare($sql);
-      $consulta->bindValue('data_Reserva ', $data_Reserva);
+      $consulta->bindValue('data_Reserva ', $obj->data_Reserva);
       $consulta->bindValue('hora_Ini', $hora_Ini);
       $consulta->bindValue('hora_Fim', $hora_Fim);
       $consulta->bindValue('salaNome', $salaNome);

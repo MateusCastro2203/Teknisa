@@ -18,5 +18,10 @@ class SalaReuniaoControl{
 		$salaReuniao = new SalaReuniao();
 		return $salaReuniao->delete($obj,$id);
 	}
+
+	function find(){
+		$salaReuniao = new SalaReuniao();
+		return $salaReuniao->find();
+	}
 }
 ?>

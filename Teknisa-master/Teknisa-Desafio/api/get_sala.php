@@ -1,7 +1,7 @@
 <?php
 include __DIR__.'/../control/SalaReuniaoControl.php';
 
-$SalaControl = new AgendamentoSalaControl();
+$SalaControl = new SalaReuniaoControl();
 
 header('Content-type: application/json');
 
